@@ -4,10 +4,11 @@
     "typescript": "^4.4.4"
   },
   "repository": {
-    "github": "https://github.com/danielguirra/bible-pt"
+    "type": "git",
+    "url": "https://github.com/danielguirra/bible-pt"
   },
   "name": "bible-pt",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
