@@ -1,5 +1,10 @@
 import axios from "axios";
 
+export async function Names(): Promise<any> {
+  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/`);
+  return bible["data"];
+}
+
 export async function Livro(livro: string): Promise<any> {
   let bible = await axios.get(
     `https://bible.danielguirra.repl.co/bible/${livro}`
