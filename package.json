@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0",
+    "typescript": "^4.4.4"
+  },
+  "name": "bible-pt",
+  "version": "1.0.6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bible",
+    "bible-pt"
+  ],
+  "author": "Daniel Guirra",
+  "license": "MIT",
+  "description": ""
+}
