@@ -3,8 +3,11 @@
     "axios": "^0.24.0",
     "typescript": "^4.4.4"
   },
+  "repository": {
+    "github": "https://github.com/danielguirra/bible-pt"
+  },
   "name": "bible-pt",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
