@@ -7,7 +7,7 @@ npm install bible-pt
 ### Para Usar em JS
 
 ```JS
-    const {Livro,Cap,Ver} = require('bible-pt')
+    const {Livro,Cap,Ver,Names} = require('bible-pt')
 
     let bibleLivro = async ()=>{
         let livro = await Livro('salmos')
@@ -18,13 +18,16 @@ npm install bible-pt
     let bibleVer = async ()=>{
         let livro = await Ver('salmos',23,1)
     }
+    let bibleVer = async ()=>{
+        let livro = await Names()
+    }
 
 ```
 
 ### Para Usar em TS
 
 ```TS
-   import { Livro, Cap, Ver } from "bible-pt";
+   import { Livro, Cap, Ver, Names } from "bible-pt";
 
     async function BibleLivro(livr: string): Promise<any> {
     let livro = await Livro(livr);
@@ -46,6 +49,14 @@ npm install bible-pt
     return verc;
     }
     BibleVer("salmos", 23, 1);
+
+    async function BibleNames(): Promise<any> {
+    let name = await Names();
+    console.log(name);
+    return name;
+    }
+    BibleNames();
+
 
 
 ```

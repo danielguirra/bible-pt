@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export async function Names(): Promise<any> {
-  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/`);
+  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/nomes`);
   return bible["data"];
 }
 
