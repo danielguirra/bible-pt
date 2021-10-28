@@ -27,3 +27,18 @@ export async function Ver(
   );
   return bible["data"];
 }
+
+export async function Bible(): Promise<any> {
+  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/`);
+  return bible["data"];
+}
+
+export async function Velho(): Promise<any> {
+  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/velho`);
+  return bible["data"];
+}
+
+export async function Novo(): Promise<any> {
+  let bible = await axios.get(`https://bible.danielguirra.repl.co/bible/novo`);
+  return bible["data"];
+}
