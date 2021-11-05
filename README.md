@@ -1,14 +1,17 @@
 # COMO USAR
 
-### Para usar
+### Para instalar
 
 ```
-    $npm install bible-pt
+    npm install bible-pt
 ```
+
+### Biblias nas versões Almeida Revisada e Corrigida e King James Atualizada
 
 ### Para Usar em JS
 
 ```JS
+    //Para usar a KingJames basta substituir o Almeida por KingJames
     const {
     AlmeidaLivro,
     AlmeidaCapitulo,
@@ -52,6 +55,7 @@
 ### Para Usar em TS
 
 ```TS
+    //Para usar a KingJames basta substituir o Almeida por KingJames
    import {
     AlmeidaLivro,
     AlmeidaCapitulo,
