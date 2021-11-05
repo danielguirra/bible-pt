@@ -2,7 +2,9 @@
 
 ### Para usar
 
-npm install bible-pt
+```
+    $npm install bible-pt
+```
 
 ### Para Usar em JS
 
