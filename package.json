@@ -8,7 +8,7 @@
     "url": "https://github.com/danielguirra/bible-pt"
   },
   "name": "bible-pt",
-  "version": "1.0.16",
+  "version": "1.2.0",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc"

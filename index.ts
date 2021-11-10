@@ -16,6 +16,15 @@ export async function AlmeidaLivro(livro: string): Promise<any> {
   return bible["data"];
 }
 /**
+ * Retorna o Livro passado na função em formato JSON
+ */
+export async function AlmeidaNumeroDeCapitulos(livro: string): Promise<any> {
+  let bible = await axios.get(
+    `https://bible.danielguirra.repl.co/arc/${livro}/capitulos`
+  );
+  return bible["data"];
+}
+/**
  * Retorna o Capitulo passado na função em formato JSON
  */
 export async function AlmeidaCapitulo(
@@ -74,6 +83,12 @@ export async function KingJamesNomes(): Promise<any> {
 export async function KingJamesLivro(livro: string): Promise<any> {
   let bible = await axios.get(
     `https://bible.danielguirra.repl.co/kja/${livro}`
+  );
+  return bible["data"];
+}
+export async function KingJamesNumeroDeCapitulos(livro: string): Promise<any> {
+  let bible = await axios.get(
+    `https://bible.danielguirra.repl.co/kja/${livro}/capitulos`
   );
   return bible["data"];
 }

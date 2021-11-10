@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.KingJamesNovo = exports.KingJamesVelho = exports.KingJamesBibla = exports.KingJamesVersiculo = exports.KingJamesCapitulo = exports.KingJamesLivro = exports.KingJamesNomes = exports.AlmeidaNovo = exports.AlmeidaVelho = exports.AlmeidaBibla = exports.AlmeidaVersiculo = exports.AlmeidaCapitulo = exports.AlmeidaLivro = exports.AlmeidaNomes = void 0;
+exports.KingJamesNovo = exports.KingJamesVelho = exports.KingJamesBibla = exports.KingJamesVersiculo = exports.KingJamesCapitulo = exports.KingJamesNumeroDeCapitulos = exports.KingJamesLivro = exports.KingJamesNomes = exports.AlmeidaNovo = exports.AlmeidaVelho = exports.AlmeidaBibla = exports.AlmeidaVersiculo = exports.AlmeidaCapitulo = exports.AlmeidaNumeroDeCapitulos = exports.AlmeidaLivro = exports.AlmeidaNomes = void 0;
 const axios_1 = __importDefault(require("axios"));
 /**
  * Retorna os Nomes de todos livros em formato JSON
@@ -34,6 +34,16 @@ function AlmeidaLivro(livro) {
     });
 }
 exports.AlmeidaLivro = AlmeidaLivro;
+/**
+ * Retorna o Livro passado na função em formato JSON
+ */
+function AlmeidaNumeroDeCapitulos(livro) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let bible = yield axios_1.default.get(`https://bible.danielguirra.repl.co/arc/${livro}/capitulos`);
+        return bible["data"];
+    });
+}
+exports.AlmeidaNumeroDeCapitulos = AlmeidaNumeroDeCapitulos;
 /**
  * Retorna o Capitulo passado na função em formato JSON
  */
@@ -104,6 +114,13 @@ function KingJamesLivro(livro) {
     });
 }
 exports.KingJamesLivro = KingJamesLivro;
+function KingJamesNumeroDeCapitulos(livro) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let bible = yield axios_1.default.get(`https://bible.danielguirra.repl.co/kja/${livro}/capitulos`);
+        return bible["data"];
+    });
+}
+exports.KingJamesNumeroDeCapitulos = KingJamesNumeroDeCapitulos;
 /**
  * Retorna o Capitulo passado na função em formato JSON
  */
