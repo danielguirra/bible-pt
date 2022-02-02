@@ -140,7 +140,7 @@ export async function KingJamesNovo(): Promise<any> {
   return bible["data"];
 }
 /**
- * Retorna um capitulo da Biblia King James completo em formato JSON
+ * Retorna um capitulo da Biblia King James completo em formato Object
  */
 export async function CapituloDoDiaKingJames(): Promise<object> {
   names;

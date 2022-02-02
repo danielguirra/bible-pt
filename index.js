@@ -192,7 +192,7 @@ function KingJamesNovo() {
 }
 exports.KingJamesNovo = KingJamesNovo;
 /**
- * Retorna um capitulo da Biblia King James completo em formato JSON
+ * Retorna um capitulo da Biblia King James completo em formato Object
  */
 function CapituloDoDiaKingJames() {
     return __awaiter(this, void 0, void 0, function* () {
