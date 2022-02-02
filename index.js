@@ -1,4 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,8 +31,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.KingJamesNovo = exports.KingJamesVelho = exports.KingJamesBibla = exports.KingJamesVersiculo = exports.KingJamesCapitulo = exports.KingJamesNumeroDeCapitulos = exports.KingJamesLivro = exports.KingJamesNomes = exports.AlmeidaNovo = exports.AlmeidaVelho = exports.AlmeidaBibla = exports.AlmeidaVersiculo = exports.AlmeidaCapitulo = exports.AlmeidaNumeroDeCapitulos = exports.AlmeidaLivro = exports.AlmeidaNomes = void 0;
+exports.CapituloDoDiaKingJames = exports.KingJamesNovo = exports.KingJamesVelho = exports.KingJamesBibla = exports.KingJamesVersiculo = exports.KingJamesCapitulo = exports.KingJamesNumeroDeCapitulos = exports.KingJamesLivro = exports.KingJamesNomes = exports.AlmeidaNovo = exports.AlmeidaVelho = exports.AlmeidaBibla = exports.AlmeidaVersiculo = exports.AlmeidaCapitulo = exports.AlmeidaNumeroDeCapitulos = exports.AlmeidaLivro = exports.AlmeidaNomes = void 0;
 const axios_1 = __importDefault(require("axios"));
+const names = __importStar(require("./namesBible.json"));
 /**
  * Retorna os Nomes de todos livros em formato JSON
  */
@@ -171,3 +191,22 @@ function KingJamesNovo() {
     });
 }
 exports.KingJamesNovo = KingJamesNovo;
+/**
+ * Retorna um capitulo da Biblia King James completo em formato JSON
+ */
+function CapituloDoDiaKingJames() {
+    return __awaiter(this, void 0, void 0, function* () {
+        names;
+        const num = Math.floor(Math.random() * 65);
+        const livro = names[num].id;
+        const capitulos = yield axios_1.default.get(`https://bible.danielguirra.repl.co/kja/${livro}`);
+        const numc = Math.floor(Math.random() * capitulos.data.capitulos.length);
+        const name = capitulos.data.livro;
+        const capdia = {
+            url: `https://bible.danielguirra.repl.co/kja/${livro}/${numc + 1}`,
+            data: `${name} capitulo:${numc + 1}`,
+        };
+        return capdia;
+    });
+}
+exports.CapituloDoDiaKingJames = CapituloDoDiaKingJames;
