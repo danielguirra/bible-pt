@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as names from "./namesBible.json";
 /**
  * Retorna os Nomes de todos livros em formato JSON
  */
@@ -137,4 +138,22 @@ export async function KingJamesVelho(): Promise<any> {
 export async function KingJamesNovo(): Promise<any> {
   let bible = await axios.get(`https://bible.danielguirra.repl.co/kja/novo`);
   return bible["data"];
+}
+/**
+ * Retorna um capitulo da Biblia King James completo em formato JSON
+ */
+export async function CapituloDoDiaKingJames(): Promise<object> {
+  names;
+  const num = Math.floor(Math.random() * 65);
+  const livro = names[num].id;
+  const capitulos = await axios.get(
+    `https://bible.danielguirra.repl.co/kja/${livro}`
+  );
+  const numc = Math.floor(Math.random() * capitulos.data.capitulos.length);
+  const name = capitulos.data.livro;
+  const capdia = {
+    url: `https://bible.danielguirra.repl.co/kja/${livro}/${numc + 1}`,
+    data: `${name} capitulo:${numc + 1}`,
+  };
+  return capdia;
 }
